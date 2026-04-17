@@ -2,29 +2,123 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>6. Sınıf Fen Bilimleri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Sınıf Fen Bilimleri - Büşra Öğretmen</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .accordion { background-color: #6a1b9a; color: white; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 18px; font-weight: bold; transition: 0.4s; margin-bottom: 5px; border-radius: 8px; }
+        .active, .accordion:hover { background-color: #001f3f; }
+        .panel { padding: 0 18px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; border-radius: 0 0 8px 8px; margin-bottom: 15px; }
+        .unit-image { width: 100%; max-width: 600px; border-radius: 10px; margin: 20px auto; display: block; border: 3px solid #f0faff; }
+        .unit-text { padding: 20px 0; color: #333; text-align: left; line-height: 1.6; }
+        .unit-text strong { color: #6a1b9a; }
+    </style>
 </head>
 <body>
     <nav><a href="index.html">⬅ Ana Sayfaya Dön</a></nav>
+    
     <div class="content-wrapper">
         <div class="daily-question">
             <div class="badge">💡 Günün Sorusu</div>
-            <h3>Neden yemek borumuzda besinler yer çekimi olmasa bile midemize ulaşabilir?</h3>
-            <p id="answer" style="display:none; color: #2e8b57; font-weight: bold;">Cevap: Sindirim sistemimizdeki "Peristaltik Hareket" sayesinde. Yemek borusu kasları dalga benzeri bir hareketle besini aşağı doğru iter.</p>
+            <h3>Güneş tutulması neden her ay gerçekleşmez?</h3>
+            <p id="answer" style="display:none; color: #2e8b57; font-weight: bold;">
+                Cevap: Çünkü Ay'ın yörünge düzlemi ile Dünya'nın yörünge düzlemi arasında yaklaşık 5 derecelik bir açı farkı vardır. Bu yüzden her ay tam olarak aynı hizaya gelmezler!
+            </p>
             <button onclick="toggleAnswer()" id="btn-answer">Cevabı Gör</button>
         </div>
 
-        <h1>6. Sınıf Fen Yolculuğu: Derin Bilgiler</h1>
-        <section class="topic">
-            <h2>🪐 Gezegenlerin Gizemli Dünyası</h2>
-            <p>Satürn o kadar hafiftir ki (yoğunluğu sudan azdır), eğer onu içine alabilecek kadar devasa bir küvet bulup içine su doldursaydın, Satürn batmaz ve suyun üzerinde yüzerdi! Ayrıca Jüpiter'de "Büyük Kırmızı Leke" denen bir fırtına var ki, bu fırtına 300 yıldır devam ediyor ve içine 3 tane Dünya sığabilir.</p>
-        </section>
-        <section class="topic">
-            <h2>🩸 Vücudundaki Nehir: Kan Dolaşımı</h2>
-            <p>Vücudundaki tüm damarları uç uca ekleseydik yaklaşık 100.000 kilometre uzunluğunda olurdu. Bu, Dünyanın etrafını tam 2.5 kez sarmaya yeter! Kalbin ise bir günde o kadar çok enerji üretir ki, bir kamyonu 32 kilometre boyunca sürmeye yetecek gücü açığa çıkarır.</p>
-        </section>
+        <header style="text-align: center; margin-bottom: 30px;">
+            <h1 style="color: #001f3f;">6. Sınıf Fen Bilimleri Üniteleri</h1>
+            <p>Öğrenmek istediğin ünitenin üzerine tıkla ve keşfet!</p>
+        </header>
+
+        <button class="accordion">1. ÜNİTE: GÜNEŞ SİSTEMİ VE TUTULMALAR</button>
+        <div class="panel">
+            <img src="sinif6_unite1.jpeg" alt="Güneş Sistemi" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Güneş Sistemi'nin Yapısı:</strong> Merkezde Güneş bulunur. Gezegenleri <strong>İç (Karasal)</strong> ve <strong>Dış (Gazsal)</strong> olarak ayırırız. Mars ve Jüpiter arasındaki Asteroit Kuşağı sistemin sınırlarını belirler.</p>
+                <p><strong>Tutulmalar:</strong> Güneş tutulması Yeni Ay evresinde, Ay tutulması ise Dolunay evresinde gerçekleşir. Ay tutulmasında Ay genelde kızıl bir renk alır.</p>
+            </div>
+        </div>
+
+        <button class="accordion">2. ÜNİTE: KUVVETİN ETKİSİNDE HAREKET</button>
+        <div class="panel">
+            <img src="sinif6_unite2.jpeg" alt="Kuvvet ve Hareket" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Bileşke Kuvvet:</strong> Birden fazla kuvvetin yaptığı toplam etkidir. Aynı yönlüler toplanır, zıt yönlüler çıkarılır.</p>
+                <p><strong>Dengelenmiş Kuvvetler:</strong> Bileşke kuvvet sıfırdır. Cisim duruyorsa durmaya devam eder, hareketliyse sabit süratle gider.</p>
+            </div>
+        </div>
+
+        <button class="accordion">3. ÜNİTE: CANLILARDA SİSTEMLER</button>
+        <div class="panel">
+            <img src="sinif6_unite3.jpeg" alt="Sistemler" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Sindirim & Dolaşım:</strong> Besinlerin kana geçecek kadar parçalanması sindirimdir. Kanın temizlenmek için akciğere gitmesine <strong>Küçük Dolaşım</strong> denir.</p>
+                <p><strong>Solunum & Boşaltım:</strong> Alveoller gaz değişimini sağlar; böbrekler ise kanı süzerek idrar oluşumunu gerçekleştirir.</p>
+            </div>
+        </div>
+
+        <div style="background: #e1f5fe; padding: 20px; border-radius: 15px; margin-top: 30px; border-left: 5px solid #001f3f;">
+            <h2 style="color: #001f3f; margin-top: 0;">🪐 Şaşırtıcı Fen Gerçekleri</h2>
+            <p><strong>Satürn Yüzebilir mi?</strong> Satürn'ün yoğunluğu sudan düşüktür. Eğer yeterince büyük bir havuzunuz olsaydı Satürn suyun üzerinde batmadan yüzerdi!</p>
+            <p><strong>Kalbin Gücü:</strong> Kalbiniz bir günde o kadar enerji üretir ki, bir kamyonu 32 km sürmeye yeter!</p>
+        </div>
+
+        <button class="accordion">4. ÜNİTE: IŞIĞIN YANSIMASI VE RENKLER</button>
+        <div class="panel">
+            <img src="sinif6_unite4.jpeg" alt="Işık ve Renkler" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Yansıma:</strong> Işık pürüzsüz yüzeylerden düzgün, pürüzlü yüzeylerden dağınık yansır.</p>
+                <p><strong>Renkler:</strong> Beyaz ışık aslında tüm renklerin birleşimidir. Koyu renkli maddeler ışığı daha çok soğurur ve daha fazla ısınır.</p>
+            </div>
+        </div>
+
+        <button class="accordion">5. ÜNİTE: MADDENİN AYIRT EDICI ÖZELLİKLERİ</button>
+        <div class="panel">
+            <img src="sinif6_unite5.jpeg" alt="Yoğunluk" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Yoğunluk (d = m / V):</strong> Saf maddeler için ayırt edici bir özelliktir. Yoğunluğu sıvınınkinden küçük olan maddeler yüzer.</p>
+            </div>
+        </div>
+
+        <button class="accordion">6. ÜNİTE: ELEKTRİĞİN İLETİMİ VE DİRENÇ</button>
+        <div class="panel">
+            <img src="sinif6_unite6.jpeg" alt="Direnç" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Direnç:</strong> Maddelerin akıma karşı gösterdiği zorluktur. Tel uzarsa direnç artar, tel kalınlaşırsa direnç azalır.</p>
+            </div>
+        </div>
+
+        <button class="accordion">7. ÜNİTE: SÜRDÜRÜLEBİLİR YAŞAM VE ETKİLEŞİM</button>
+        <div class="panel">
+            <img src="sinif6_unite7.jpeg" alt="Sürdürülebilirlik" class="unit-image">
+            <div class="unit-text">
+                <p><strong>Döngüler & Geri Dönüşüm:</strong> Su, karbon ve azot döngüleri yaşamın devamı için şarttır. Gelecek nesiller için kaynaklarımızı korumalıyız.</p>
+            </div>
+        </div>
+
     </div>
-    <script>function toggleAnswer() { var x = document.getElementById("answer"); x.style.display = (x.style.display === "none") ? "block" : "none"; }</script>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+            });
+        }
+        
+        function toggleAnswer() {
+            var x = document.getElementById("answer");
+            x.style.display = (x.style.display === "none") ? "block" : "none";
+        }
+    </script>
 </body>
 </html>
