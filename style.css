@@ -1,15 +1,148 @@
-body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: #f4f7f6; color: #333; text-align: center; line-height: 1.6; }
-.hero { background: linear-gradient(135deg, #2e8b57, #3cb371); color: white; padding: 40px 20px; }
-.countdown-section { background: #ff7f50; color: white; padding: 20px; margin: 20px auto; width: 70%; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.selection-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 30px; }
-.card { background: white; width: 180px; height: 120px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #2e8b57; font-size: 22px; font-weight: bold; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-.card:hover { transform: translateY(-5px); background: #2e8b57; color: white; }
-.content-wrapper { max-width: 850px; margin: 30px auto; background: white; padding: 30px; border-radius: 15px; text-align: left; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-.daily-question { background: #fff9c4; padding: 20px; border-radius: 15px; border: 2px dashed #fbc02d; margin-bottom: 30px; text-align: center; }
-.badge { background: #fbc02d; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-.topic { border-left: 5px solid #2e8b57; padding-left: 20px; margin-bottom: 40px; }
-.topic h2 { color: #2e8b57; margin-top: 0; }
-nav { background: #333; padding: 15px; text-align: left; }
-nav a { color: white; text-decoration: none; font-weight: bold; }
-.contact-section { background: #333; color: white; padding: 40px; margin-top: 50px; }
-#btn-answer { background: #2e8b57; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+/* Genel Ayarlar */
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    margin: 0; 
+    background-color: #f0faff; /* Açık Mavi Arka Plan */
+    color: #333; 
+    text-align: center; 
+    line-height: 1.6; 
+}
+
+/* Üst Başlık Alanı - Lacivert ve Mor Geçişli */
+.hero { 
+    background: linear-gradient(135deg, #001f3f, #6a1b9a); /* Lacivert ve Mor */
+    color: white; 
+    padding: 50px 20px; 
+}
+
+/* LGS Geri Sayım - Pembe */
+.countdown-section { 
+    background: #ec407a; /* Pembe */
+    color: white; 
+    padding: 20px; 
+    margin: 20px auto; 
+    width: 70%; 
+    border-radius: 50px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+/* Sınıf Kartları Konteyner */
+.selection-container { 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    padding: 30px; 
+}
+
+/* Sınıf Kartları - Lacivert Yazı, Beyaz Arka Plan */
+.card { 
+    background: white; 
+    width: 180px; 
+    height: 120px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none; 
+    color: #001f3f; /* Lacivert */
+    font-size: 22px; 
+    font-weight: bold; 
+    border: 3px solid #6a1b9a; /* Mor Kenarlık */
+    border-radius: 15px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    transition: 0.3s; 
+}
+
+.card:hover { 
+    transform: translateY(-8px); 
+    background: #6a1b9a; /* Mor */
+    color: white; 
+}
+
+/* İçerik Sayfaları - Beyaz Kart */
+.content-wrapper { 
+    max-width: 850px; 
+    margin: 30px auto; 
+    background: white; 
+    padding: 30px; 
+    border-radius: 15px; 
+    text-align: left; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
+}
+
+/* Günün Sorusu - Sarı */
+.daily-question { 
+    background: #fff176; /* Sarı */
+    padding: 20px; 
+    border-radius: 15px; 
+    border: 3px dashed #795548; /* Kahverengi Kesik Çizgi */
+    margin-bottom: 30px; 
+    text-align: center; 
+}
+
+.badge { 
+    background: #795548; /* Kahverengi */
+    color: white; 
+    padding: 5px 15px; 
+    border-radius: 20px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    display: inline-block; 
+    margin-bottom: 10px; 
+}
+
+/* Konu Başlıkları - Mor */
+.topic { 
+    border-left: 6px solid #6a1b9a; /* Mor Sol Çizgi */
+    padding-left: 20px; 
+    margin-bottom: 40px; 
+}
+
+.topic h2 { 
+    color: #001f3f; /* Lacivert Başlıklar */
+    margin-top: 0; 
+}
+
+/* Gezinti Menüsü (Nav) - Lacivert */
+nav { 
+    background: #001f3f; 
+    padding: 15px; 
+    text-align: left; 
+}
+
+nav a { 
+    color: #f0faff; /* Açık Mavi Yazı */
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+/* Alt Bilgi (Footer) - Kahverengi */
+.contact-section { 
+    background: #5d4037; /* Koyu Kahverengi */
+    color: white; 
+    padding: 40px; 
+    margin-top: 50px; 
+}
+
+/* Cevabı Gör Butonu - Pembe */
+#btn-answer { 
+    background: #ec407a; /* Pembe */
+    color: white; 
+    border: none; 
+    padding: 10px 25px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold;
+}
+
+#btn-answer:hover {
+    background: #d81b60;
+}
+
+/* Sanal Laboratuvar Alanı - Açık Mavi */
+.lab-section { 
+    background: #e1f5fe; 
+    padding: 30px; 
+    margin-top: 20px; 
+    color: #001f3f;
+}
