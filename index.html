@@ -6,101 +6,71 @@
     <title>Dijital Fen Akademisi - Büşra Araba</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Modern ve Naif Tasarım Temelleri */
-        body {
-            background-color: #fcf9f2; /* Naif Krem */
-            color: #2c3e50;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        /* Hero Alanı: Canlı ve Modern */
-        .hero {
-            background: linear-gradient(135deg, #57cc99, #38a3a5); /* Adaçayı ve Okyanus Geçişi */
-            padding: 60px 20px;
-            color: white;
-            text-align: center;
-            border-bottom: 4px solid #22577a;
-        }
-        .hero h1 { font-size: 2.3rem; margin-bottom: 15px; letter-spacing: 2px; }
-        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; opacity: 0.95; font-weight: 300; }
-
-        /* Minimal LGS Sayacı */
-        .countdown-wrap { padding: 30px 0; text-align: center; }
-        .countdown-wrap h3 { font-size: 0.9rem; color: #22577a; letter-spacing: 1px; margin-bottom: 10px; }
-        #countdown { display: flex; justify-content: center; gap: 12px; }
-        .time-box {
-            background: #22577a; /* Koyu Mavi */
-            color: #ffca3a; /* Naif Altın */
-            padding: 8px 12px;
-            border-radius: 10px;
-            min-width: 65px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .time-box span { font-size: 1.3rem; display: block; font-weight: bold; }
-
-        /* Alt Alta Buton Yapısı */
-        .main-menu { max-width: 600px; margin: 0 auto; padding: 0 20px 50px 20px; }
+        /* Genel Estetik ve Krem Arka Plan */
+        body { background-color: #fdfaf1; color: #2c3e50; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        .hero { background: linear-gradient(135deg, #38a3a5, #22577a); padding: 40px 20px; color: white; text-align: center; border-bottom: 4px solid #1a3a5a; }
         
-        .menu-item {
-            display: block;
-            text-decoration: none;
-            background: white;
-            color: #22577a;
-            padding: 20px;
-            margin-bottom: 12px;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-align: center;
-            border: 1px solid #e0e0e0;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
-        .menu-item:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.08); background: #f0faff; }
+        /* Arama Kutusu */
+        .search-container { margin: 15px auto; max-width: 450px; padding: 0 20px; }
+        .search-box { width: 100%; padding: 10px 20px; border-radius: 20px; border: 2px solid #38a3a5; outline: none; }
 
-        /* Akordiyon Butonları */
+        /* Sayaç */
+        .countdown-wrap { text-align: center; padding: 10px 0; }
+        #countdown { display: flex; justify-content: center; gap: 8px; }
+        .time-box { background: #22577a; color: #ffca3a; padding: 5px 10px; border-radius: 8px; min-width: 55px; font-weight: bold; font-size: 0.9rem; }
+
+        /* Ana Menü Yapısı */
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        
+        /* Sınıflar Yine Alt Alta */
+        .class-list { margin-bottom: 25px; }
+        .class-item { display: block; text-decoration: none; background: white; color: #22577a; padding: 18px; margin-bottom: 8px; border-radius: 12px; font-weight: bold; text-align: center; border: 1px solid #e0e0e0; transition: 0.3s; }
+        .class-item:hover { background: #f0faff; transform: translateY(-2px); }
+
+        /* DİĞER BÖLÜMLER YAN YANA (GRID) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Yan yana iki sütun */
+            gap: 12px;
+        }
+
         .accordion-btn { 
-            cursor: pointer; padding: 20px; width: 100%; border: none; text-align: center; 
-            font-size: 1.1rem; transition: 0.3s; margin-top: 15px; border-radius: 15px; 
-            font-weight: bold; color: white;
+            cursor: pointer; padding: 15px; width: 100%; border: none; text-align: center; 
+            font-size: 0.95rem; border-radius: 12px; font-weight: bold; color: white;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 80px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-        .btn-m { background-color: #6a4c93; } /* Motivasyon: Zarif Mor */
-        .btn-e { background-color: #ff924c; } /* Deney: Enerjik Turuncu */
 
+        .btn-orange { background-color: #f3722c; } /* Soru Çözüm */
+        .btn-teal { background-color: #43aa8b; }   /* Deney Köşesi */
+        .btn-blue { background-color: #4d908e; }   /* Hızlı Tekrar */
+        .btn-red { background-color: #d90429; }    /* Hatalar Köşesi */
+        .btn-purple { background-color: #6a4c93; grid-column: span 2; } /* Motivasyon - Altı Kaplasın */
+
+        /* Panel Açılışı - Grid içinde mutlak konumlanmasın diye ayar */
+        .grid-item { position: relative; }
         .panel { 
             background-color: white; max-height: 0; overflow: hidden; 
-            transition: max-height 0.4s ease-out; border-radius: 0 0 15px 15px; 
-            margin-top: -10px; border: 1px solid #eee; border-top: none;
+            transition: max-height 0.4s ease-out; border-radius: 12px; 
+            border: 1px solid #eee; margin-top: 5px; font-size: 0.9rem;
         }
+        .panel-content { padding: 15px; text-align: left; }
 
-        /* İçerik Stilleri */
-        .quote-row { padding: 15px; border-bottom: 1px solid #f9f9f9; font-size: 0.95rem; text-align: left; }
-        .quote-row b { color: #6a4c93; display: block; margin-top: 5px; font-size: 0.85rem; }
-
-        /* Footer / İmza Bölümü */
-        footer {
-            background-color: #f0f0f0;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #e5e5e5;
-        }
-        .sig-text { font-size: 1rem; color: #555; margin-bottom: 15px; }
-        .contact-text { font-size: 0.95rem; color: #777; }
-        .contact-text a { color: #38a3a5; text-decoration: none; font-weight: bold; }
+        footer { background: #f1f1f1; padding: 30px; text-align: center; margin-top: 40px; border-top: 1px solid #ddd; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1>DİJİTAL FEN AKADEMİSİ</h1>
-        <p>Geleceğin bilim insanları için hazırlandı! Merak ettiğin her şey, ünite özetleri ve ilham veren notlarla fen bilimlerini keşfetmeye buradan başla.</p>
+        <h1 style="margin:0; font-size: 2rem;">DİJİTAL FEN AKADEMİSİ</h1>
+        <p style="margin-top:10px; font-size: 1rem;">Fen bilimlerinde başarıya giden yolculuğun burada başlıyor.</p>
     </section>
 
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-box" placeholder="Ünite veya kavram ara..." onkeyup="searchFunction()">
+    </div>
+
     <div class="countdown-wrap">
-        <h3>🎯 LGS 2026 BAŞARIYA KALAN ZAMAN</h3>
         <div id="countdown">
             <div class="time-box"><span id="days">00</span>Gün</div>
             <div class="time-box"><span id="hours">00</span>Saat</div>
@@ -108,42 +78,63 @@
         </div>
     </div>
 
-    <div class="main-menu">
-        <a href="sinif5.html" class="menu-item">5. Sınıf Fen Bilimleri</a>
-        <a href="sinif6.html" class="menu-item">6. Sınıf Fen Bilimleri</a>
-        <a href="sinif7.html" class="menu-item">7. Sınıf Fen Bilimleri</a>
-        <a href="sinif8.html" class="menu-item">8. Sınıf Fen Bilimleri</a>
-
-        <button class="accordion-btn btn-m">📚 Motivasyon Köşesi</button>
-        <div class="panel">
-            <div class="quote-row">"Hayatta en hakiki mürşit ilimdir, fendir." <b>— Mustafa Kemal Atatürk</b></div>
-            <div class="quote-row">"Hayal gücü bilgiden daha önemlidir." <b>— Albert Einstein</b></div>
-            <div class="quote-row">"Eğitim, dünyayı değiştirmek için kullanabileceğiniz en güçlü silahtır." <b>— Nelson Mandela</b></div>
-            <div class="quote-row">"Dahi, çalışmanın ürünüdür." <b>— Thomas Edison</b></div>
-            <div class="quote-row">"Öğrenmek akıntıya karşı yüzmek gibidir, durduğunuz anda geriye gidersiniz." <b>— Benjamin Britten</b></div>
-            <div class="quote-row">"Hiçbir şey karanlık bir beyinden daha korkunç değildir." <b>— Goethe</b></div>
-            <div class="quote-row">"Başarı bir yolculuktur, bir varış noktası değil." <b>— Ben Sweetland</b></div>
-            <div class="quote-row">"Çalışmak bizi üç büyük beladan kurtarır: Can sıkıntısı, kötü alışkanlıklar ve yoksulluk." <b>— Voltaire</b></div>
-            <div class="quote-row">"Zor iş, zamanında yapmamız gereken kolay işlerin birikmesiyle oluşur." <b>— Henry Ford</b></div>
-            <div class="quote-row">"Bizi birbirimizden ayıran zeka değil, emektir." <b>— Aziz Sancar</b></div>
+    <div class="container">
+        <div class="class-list">
+            <a href="sinif5.html" class="class-item">5. Sınıf Fen Bilimleri</a>
+            <a href="sinif6.html" class="class-item">6. Sınıf Fen Bilimleri</a>
+            <a href="sinif7.html" class="class-item">7. Sınıf Fen Bilimleri</a>
+            <a href="sinif8.html" class="class-item">8. Sınıf Fen Bilimleri</a>
         </div>
 
-        <button class="accordion-btn btn-e">🧪 Deney Köşesi 🔬⚗️</button>
-        <div class="panel">
-            <div style="padding: 30px; text-align: center; color: #888; font-style: italic;">
-                Bilimsel keşifler çok yakında burada olacak...
+        <div class="feature-grid">
+            
+            <div class="grid-item">
+                <button class="accordion-btn btn-orange">📝 Soru Çözüm</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <a href="#" style="color:#f3722c; text-decoration:none;">• LGS Çıkmışlar</a><br>
+                        <a href="#" style="color:#f3722c; text-decoration:none;">• Günlük 10 Soru</a>
+                    </div>
+                </div>
             </div>
+
+            <div class="grid-item">
+                <button class="accordion-btn btn-teal">🧪 Deney Köşesi</button>
+                <div class="panel">
+                    <div class="panel-content" style="color:#888;">Yakında burada...</div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <button class="accordion-btn btn-blue">⚡ Hızlı Tekrar</button>
+                <div class="panel">
+                    <div class="panel-content" style="color:#888;">İçerik bekleniyor...</div>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <button class="accordion-btn btn-red">❌ Hata Köşesi</button>
+                <div class="panel">
+                    <div class="panel-content" style="color:#888;">Doğru bilinen yanlışlar...</div>
+                </div>
+            </div>
+
+            <div class="grid-item" style="grid-column: span 2;">
+                <button class="accordion-btn btn-purple">📚 Motivasyon Notları</button>
+                <div class="panel">
+                    <div class="panel-content">
+                        <i>"Hayatta en hakiki mürşit ilimdir, fendir." - Atatürk</i>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <footer>
-        <div class="sig-text">
-            Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.
-        </div>
-        <div class="contact-text">
-            Sorularınız veya geri bildirimleriniz için bana her zaman ulaşabilirsiniz: <br>
-            📧 <a href="mailto:busraaraba@gmail.com">busraaraba@gmail.com</a>
-        </div>
+        <p style="margin-bottom: 10px;">Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.</p>
+        <p style="color: #666;">Sorularınız için ulaşabilirsiniz:</p>
+        📧 <a href="mailto:busraaraba@gmail.com" style="color: #38a3a5; text-decoration: none; font-weight: bold;">busraaraba@gmail.com</a>
     </footer>
 
     <script>
@@ -151,14 +142,22 @@
         var acc = document.getElementsByClassName("accordion-btn");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
                 var panel = this.nextElementSibling;
                 if (panel.style.maxHeight) { panel.style.maxHeight = null; } 
                 else { panel.style.maxHeight = panel.scrollHeight + "px"; }
             });
         }
 
-        // LGS Sayaç Fonksiyonu
+        // Arama (Sadece sınıflar için)
+        function searchFunction() {
+            var input = document.getElementById("searchInput").value.toUpperCase();
+            var items = document.getElementsByClassName("class-item");
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.display = items[i].innerHTML.toUpperCase().includes(input) ? "" : "none";
+            }
+        }
+
+        // LGS Sayaç
         function updateCountdown() {
             const lgsDate = new Date("June 7, 2026 09:30:00").getTime();
             const now = new Date().getTime();
