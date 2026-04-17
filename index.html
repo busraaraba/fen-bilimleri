@@ -6,39 +6,108 @@
     <title>Fen Bilimleri Portalı - Büşra Araba</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .author-badge {
-            background-color: #fbc02d; /* Sarı */
-            color: #001f3f; /* Lacivert */
-            padding: 10px 25px;
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: bold;
-            margin-top: 20px;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border: 2px solid #001f3f;
+        /* Şeffaf Arka Plan Yazısı */
+        body::before {
+            content: "FEN BİLİMLERİ";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            font-size: 10vw;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.02);
+            z-index: -1;
+            pointer-events: none;
         }
-        .hero h2 {
-            margin-bottom: 5px;
+
+        /* Öğretmen İmzası - Sade ve Profesyonel */
+        .teacher-signature {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+        }
+
+        .teacher-signature span {
+            color: #f0faff;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .teacher-signature b {
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Sayaç Bölümü */
+        #countdown { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+        .time-unit { background: #001f3f; color: white; padding: 12px; border-radius: 8px; min-width: 75px; border: 1px solid #6a1b9a; }
+        .time-unit span { font-size: 1.8rem; display: block; font-weight: bold; }
+        
+        /* Motivasyon Köşesi - Kitap ve Kalem Edasında */
+        .motivation-gallery {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 900px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .motivation-gallery h3 {
+            color: #6a1b9a;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #fbc02d;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .quote-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+            text-align: left;
+        }
+
+        .quote-text {
             font-style: italic;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            color: #444;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .quote-author {
+            color: #001f3f;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: block;
+            text-align: right;
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>Dijital Fen Akademisi</h1>
-        <h2>Bilimin Işığında Geleceğe...</h2>
-        
-        <div class="author-badge">
-            🚀 Bu site Fen Bilimleri Öğretmeni Büşra ARABA tarafından hazırlanmıştır.
+    <section class="hero" style="background: linear-gradient(to right, #001f3f, #1a2a6c); padding: 80px 20px;">
+        <h1 style="font-size: 2.8rem; letter-spacing: 2px;">DİJİTAL FEN AKADEMİSİ</h1>
+        <div class="teacher-signature">
+            <span>Bu eğitim materyali Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından hazırlanmıştır.</span>
         </div>
     </section>
 
     <div class="countdown-section">
-        <h3>LGS'ye Kalan Zaman</h3>
-        <p>Geleceğin bilim insanları için geri sayım başladı!</p>
+        <h3>🎯 LGS 2026 Geri Sayım</h3>
+        <div id="countdown">
+            <div class="time-unit"><span id="days">00</span> Gün</div>
+            <div class="time-unit"><span id="hours">00</span> Saat</div>
+            <div class="time-unit"><span id="minutes">00</span> Dakika</div>
+        </div>
     </div>
 
     <div class="selection-container">
@@ -48,10 +117,46 @@
         <a href="sinif8.html" class="card">8. Sınıf</a>
     </div>
 
+    <div class="motivation-gallery">
+        <h3>📚 Bilimin Işığında Motivasyon Notları</h3>
+        
+        <div class="quote-item">
+            <span class="quote-text">"Hiçbir zaman kaybetmem. Ya kazanırım ya da öğrenirim."</span>
+            <span class="quote-author">— Nelson Mandela</span>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-text">"Hayatta en hakiki mürşit ilimdir, fendir."</span>
+            <span class="quote-author">— Mustafa Kemal ATATÜRK</span>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-text">"Öğrenmek, akıntının tersine yüzmek gibidir; durduğunuz anda geriye gidersiniz."</span>
+            <span class="quote-author">— Benjamin Britten</span>
+        </div>
+
+        <div class="quote-item">
+            <span class="quote-text">"Dahi, çalışmanın ürünüdür. Hayal gücü bilgiden daha önemlidir."</span>
+            <span class="quote-author">— Albert Einstein</span>
+        </div>
+    </div>
+
     <footer class="contact-section">
-        <p>© 2026 - Tüm Hakları Saklıdır.</p>
-        <p>İletişim: busraaraba@gmail.com</p>
+        <p>© 2026 | Fen Bilimleri Öğretmeni Büşra Araba</p>
     </footer>
 
+    <script>
+        function updateCountdown() {
+            const lgsDate = new Date("June 7, 2026 09:30:00").getTime();
+            const now = new Date().getTime();
+            const gap = lgsDate - now;
+            const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
+            document.getElementById("days").innerText = Math.floor(gap / day);
+            document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
+            document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
