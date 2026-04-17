@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>6. Sınıf Fen Bilimleri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav><a href="index.html">⬅ Ana Sayfaya Dön</a></nav>
+    <div class="content-wrapper">
+        <div class="daily-question">
+            <div class="badge">💡 Günün Sorusu</div>
+            <h3>Neden yemek borumuzda besinler yer çekimi olmasa bile midemize ulaşabilir?</h3>
+            <p id="answer" style="display:none; color: #2e8b57; font-weight: bold;">Cevap: Sindirim sistemimizdeki "Peristaltik Hareket" sayesinde. Yemek borusu kasları dalga benzeri bir hareketle besini aşağı doğru iter.</p>
+            <button onclick="toggleAnswer()" id="btn-answer">Cevabı Gör</button>
+        </div>
+
+        <h1>6. Sınıf Fen Yolculuğu: Derin Bilgiler</h1>
+        <section class="topic">
+            <h2>🪐 Gezegenlerin Gizemli Dünyası</h2>
+            <p>Satürn o kadar hafiftir ki (yoğunluğu sudan azdır), eğer onu içine alabilecek kadar devasa bir küvet bulup içine su doldursaydın, Satürn batmaz ve suyun üzerinde yüzerdi! Ayrıca Jüpiter'de "Büyük Kırmızı Leke" denen bir fırtına var ki, bu fırtına 300 yıldır devam ediyor ve içine 3 tane Dünya sığabilir.</p>
+        </section>
+        <section class="topic">
+            <h2>🩸 Vücudundaki Nehir: Kan Dolaşımı</h2>
+            <p>Vücudundaki tüm damarları uç uca ekleseydik yaklaşık 100.000 kilometre uzunluğunda olurdu. Bu, Dünyanın etrafını tam 2.5 kez sarmaya yeter! Kalbin ise bir günde o kadar çok enerji üretir ki, bir kamyonu 32 kilometre boyunca sürmeye yetecek gücü açığa çıkarır.</p>
+        </section>
+    </div>
+    <script>function toggleAnswer() { var x = document.getElementById("answer"); x.style.display = (x.style.display === "none") ? "block" : "none"; }</script>
+</body>
+</html>
