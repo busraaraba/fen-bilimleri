@@ -7,117 +7,58 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Modern ve Naif Krem Tasarımı */
-        body { 
-            background-color: #fdfaf1; 
-            color: #2c3e50; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            overflow-x: hidden; 
-        }
+        body { background-color: #fdfaf1; color: #2c3e50; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+        .hero { background: linear-gradient(135deg, #48cae4, #0096c7); padding: 40px 15px; color: white; text-align: center; border-bottom: 5px solid #0077b6; }
+        .hero h1 { font-size: 1.8rem; margin: 0; }
+        .hero p { font-size: 0.95rem; opacity: 0.9; margin-top: 10px; font-style: italic; }
 
-        /* Hero Alanı: Naif ve Canlı */
-        .hero { 
-            background: linear-gradient(135deg, #48cae4, #0096c7); 
-            padding: 40px 15px; 
-            color: white; 
-            text-align: center; 
-            border-bottom: 5px solid #0077b6; 
-        }
-        .hero h1 { font-size: 1.8rem; margin: 0; letter-spacing: 1px; }
-        .hero p { font-size: 0.95rem; opacity: 0.9; margin-top: 10px; font-style: italic; max-width: 500px; margin-left: auto; margin-right: auto; }
-
-        /* Minimal Küçük Arama Kutusu */
+        /* Arama Kutusu */
         .search-container { margin: 15px auto; max-width: 280px; padding: 0 15px; }
-        .search-box { 
-            width: 100%; padding: 8px 15px; border-radius: 20px; 
-            border: 1.5px solid #48cae4; outline: none; font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+        .search-box { width: 100%; padding: 8px 15px; border-radius: 20px; border: 1.5px solid #48cae4; outline: none; font-size: 0.9rem; }
 
         /* Minimal LGS Sayacı */
         .countdown-wrap { text-align: center; padding: 10px 0; }
         #countdown { display: flex; justify-content: center; gap: 8px; }
-        .time-box { 
-            background: #002855; 
-            color: #ffb703; 
-            padding: 6px 10px; 
-            border-radius: 8px; 
-            min-width: 50px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+        .time-box { background: #002855; color: #ffb703; padding: 6px 10px; border-radius: 8px; min-width: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .time-box span { font-size: 1.1rem; display: block; font-weight: bold; }
 
-        /* İçerik Konteyneri */
         .container { max-width: 600px; margin: 0 auto; padding: 15px; }
+        .class-item { display: block; text-decoration: none; background: white; color: #0077b6; padding: 15px; margin-bottom: 10px; border-radius: 12px; font-weight: bold; text-align: center; border: 1px solid #e0e0e0; transition: 0.3s; }
 
-        /* Sınıf Butonları - Alt Alta */
-        .class-item { 
-            display: block; text-decoration: none; background: white; color: #0077b6; 
-            padding: 15px; margin-bottom: 10px; border-radius: 12px; font-weight: bold; 
-            text-align: center; border: 1px solid #e0e0e0; transition: 0.3s;
-        }
-        .class-item:hover { background: #f0faff; transform: translateY(-2px); }
-
-        /* Yan Yana Grid Bölümleri */
-        .feature-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 10px; 
-            margin-top: 10px;
-        }
-
-        .accordion-btn { 
-            cursor: pointer; padding: 12px; width: 100%; border: none; text-align: center; 
-            font-size: 0.85rem; border-radius: 10px; font-weight: bold; color: white; 
-            min-height: 60px; display: flex; align-items: center; justify-content: center; 
-        }
-
+        /* Grid Yapısı */
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .accordion-btn { cursor: pointer; padding: 12px; width: 100%; border: none; text-align: center; font-size: 0.85rem; border-radius: 10px; font-weight: bold; color: white; min-height: 60px; display: flex; align-items: center; justify-content: center; }
         .btn-orange { background-color: #f3722c; } 
-        .btn-teal { background-color: #43aa8b; } 
+        .btn-green { background-color: #43aa8b; } 
         .btn-blue { background-color: #4d908e; } 
         .btn-red { background-color: #d90429; } 
         .btn-purple { background-color: #6a4c93; grid-column: span 2; }
 
-        .panel { 
-            background-color: white; max-height: 0; overflow: hidden; 
-            transition: max-height 0.3s ease-out; border-radius: 10px; 
-            border: 1px solid #eee; margin-top: 5px; 
-        }
-        .panel-content { padding: 12px; font-size: 0.85rem; text-align: left; line-height: 1.5; }
-        
-        /* Günlük Soru Kutusu */
-        .daily-task-box { 
-            background: #fff3e0; 
-            padding: 10px; 
-            border-radius: 8px; 
-            border-left: 4px solid #f3722c; 
-            margin-top: 10px; 
-            font-weight: bold; 
-            color: #e65100; 
-        }
+        .panel { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-radius: 10px; border: 1px solid #eee; margin-top: 5px; }
+        .panel-content { padding: 12px; font-size: 0.85rem; text-align: left; }
 
-        /* Footer */
-        footer { 
-            margin-top: 40px; 
-            padding: 30px 15px; 
-            background-color: #f1f1f1; 
-            text-align: center; 
-            border-top: 1px solid #ddd; 
-        }
-        .footer-text { font-size: 0.9rem; color: #444; margin-bottom: 5px; }
-        .footer-contact { font-size: 0.85rem; color: #666; }
+        /* Motivasyon Sözleri Estetiği */
+        .quote-container { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .quote-text { font-style: italic; color: #444; display: block; margin-bottom: 4px; }
+        .quote-author { display: block; text-align: right; font-weight: bold; font-size: 0.8rem; color: #0077b6; }
+
+        /* Günlük Görevler Tasarımı */
+        .task-list { list-style: none; padding: 0; }
+        .task-item { background: #f0faff; margin-bottom: 8px; padding: 10px; border-radius: 8px; border-left: 4px solid #0077b6; }
+        .task-item b { color: #002855; }
+
+        footer { margin-top: 40px; padding: 30px 15px; background-color: #f1f1f1; text-align: center; border-top: 1px solid #ddd; }
     </style>
 </head>
 <body>
 
     <section class="hero">
         <h1>DİJİTAL FEN AKADEMİSİ</h1>
-        <p>Fen bilimlerinin dijital dünyasına hoş geldin! Keşfetmek, öğrenmek ve başarmak için doğru yerdesin.</p>
+        <p>Geleceğin bilim insanları için naif bir dijital laboratuvar.</p>
     </section>
 
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-box" placeholder="Konu veya sınıf ara..." onkeyup="searchSite()">
+        <input type="text" id="searchInput" class="search-box" placeholder="Ünite ara (Örn: Güneş, Kuvvet)..." onkeyup="smartSearch()">
     </div>
 
     <div class="countdown-wrap">
@@ -130,52 +71,66 @@
 
     <div class="container">
         <div id="classList">
-            <a href="sinif5.html" class="class-item searchable">5. Sınıf Fen Bilimleri</a>
-            <a href="sinif6.html" class="class-item searchable">6. Sınıf Fen Bilimleri</a>
-            <a href="sinif7.html" class="class-item searchable">7. Sınıf Fen Bilimleri</a>
-            <a href="sinif8.html" class="class-item searchable">8. Sınıf Fen Bilimleri</a>
+            <a href="sinif5.html" class="class-item" data-keywords="güneş dünya ay canlılar dünyası kuvvet sürtünme madde değişim ışığın yayılması insan çevre elektrik devre elemanları">5. Sınıf Fen Bilimleri</a>
+            <a href="sinif6.html" class="class-item" data-keywords="güneş sistemi tutulmalar kuvvet hareket canlılarda sistemler ışığın yansıması renkler maddenin ayırt edici özellikleri elektriğin iletimi direnç sürdürülebilir yaşam">6. Sınıf Fen Bilimleri</a>
+            <a href="sinif7.html" class="class-item" data-keywords="uzay araştırma hücre bölünme kuvvet enerji saf madde karışım ışığın maddeyle etkileşimi bitki hayvanlarda üreme">7. Sınıf Fen Bilimleri</a>
+            <a href="sinif8.html" class="class-item" data-keywords="mevsimler iklim dna genetik kod basınç madde endüstri basit makineler enerji dönüşümleri çevre bilimi elektrik yükleri">8. Sınıf Fen Bilimleri</a>
         </div>
 
         <div class="feature-grid">
             <div class="grid-item">
-                <button class="accordion-btn btn-orange">📝 Soru Çözüm</button>
+                <button class="accordion-btn btn-orange">📅 Günlük Görevler</button>
                 <div class="panel">
                     <div class="panel-content">
-                        <div class="searchable">• LGS En Çok Çıkanlar</div>
-                        <div class="daily-task-box" id="dailyQuestion">Yükleniyor...</div>
+                        <ul class="task-list" id="dailyTasks">
+                            </ul>
                     </div>
                 </div>
             </div>
 
             <div class="grid-item">
-                <button class="accordion-btn btn-teal">🧪 Deney Köşesi</button>
-                <div class="panel"><div class="panel-content searchable">Gelecekteki bilimsel deneyler için ayrılmıştır...</div></div>
+                <button class="accordion-btn btn-green">🧪 Deney Köşesi</button>
+                <div class="panel"><div class="panel-content">Büşra Öğretmen içeriklerini bekliyor...</div></div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-blue">⚡ Hızlı Tekrar</button>
-                <div class="panel"><div class="panel-content searchable">Kısa özetler yakında burada...</div></div>
+                <div class="panel"><div class="panel-content">Önemli notlar yakında burada...</div></div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-red">❌ Hata Köşesi</button>
-                <div class="panel"><div class="panel-content searchable">Doğrusunu öğrenmek için beklemede kal...</div></div>
+                <div class="panel"><div class="panel-content">En sık yapılan hatalar...</div></div>
             </div>
 
             <div class="grid-item" style="grid-column: span 2;">
                 <button class="accordion-btn btn-purple">📚 Motivasyon Notları</button>
                 <div class="panel">
                     <div class="panel-content">
-                        <div class="searchable">1. "Hayatta en hakiki mürşit ilimdir, fendir." - ATATÜRK</div>
-                        <div class="searchable">2. "Hayal gücü bilgiden daha önemlidir." - Albert Einstein</div>
-                        <div class="searchable">3. "Dahi, %1 ilham ve %99 terdir." - Thomas Edison</div>
-                        <div class="searchable">4. "Bizi birbirimizden ayıran zeka değil, emektir." - Aziz Sancar</div>
-                        <div class="searchable">5. "Eğitim dünyayı değiştiren en güçlü silahtır." - Mandela</div>
-                        <div class="searchable">6. "Hiçbir zaman kaybetmem; ya kazanırım ya da öğrenirim." - Mandela</div>
-                        <div class="searchable">7. "Başarı bir yolculuktur, bir varış noktası değil." - B. Sweetland</div>
-                        <div class="searchable">8. "Hiçbir şey karanlık bir beyinden daha korkunç değildir." - Goethe</div>
-                        <div class="searchable">9. "Öğrenmek akıntıya karşı yüzmek gibidir." - B. Britten</div>
-                        <div class="searchable">10. "Zor iş, birikmiş kolay işlerin toplamıdır." - Henry Ford</div>
+                        <div class="quote-container">
+                            <span class="quote-text">"Hayatta en hakiki mürşit ilimdir, fendir."</span>
+                            <span class="quote-author">Mustafa Kemal ATATÜRK</span>
+                        </div>
+                        <div class="quote-container">
+                            <span class="quote-text">"Hayal gücü bilgiden daha önemlidir."</span>
+                            <span class="quote-author">Albert Einstein</span>
+                        </div>
+                        <div class="quote-container">
+                            <span class="quote-text">"Dahi, %1 ilham ve %99 terdir."</span>
+                            <span class="quote-author">Thomas Edison</span>
+                        </div>
+                        <div class="quote-container">
+                            <span class="quote-text">"Bizi birbirimizden ayıran zeka değil, emektir."</span>
+                            <span class="quote-author">Aziz Sancar</span>
+                        </div>
+                        <div class="quote-container">
+                            <span class="quote-text">"Eğitim dünyayı değiştirmek için kullanabileceğiniz en güçlü silahtır."</span>
+                            <span class="quote-author">Nelson Mandela</span>
+                        </div>
+                        <div class="quote-container">
+                            <span class="quote-text">"Öğrenmek akıntıya karşı yüzmek gibidir, durduğunuz anda geriye gidersiniz."</span>
+                            <span class="quote-author">Benjamin Britten</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,15 +138,12 @@
     </div>
 
     <footer>
-        <div class="footer-text">Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.</div>
-        <div class="footer-contact">
-            Sorularınız için ulaşabilirsiniz: <br>
-            📧 <a href="mailto:busraaraba@gmail.com" style="color: #0096c7; text-decoration: none; font-weight: bold;">busraaraba@gmail.com</a>
-        </div>
+        <p>Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.</p>
+        📧 <a href="mailto:busraaraba@gmail.com" style="color: #0096c7; text-decoration: none; font-weight: bold;">busraaraba@gmail.com</a>
     </footer>
 
     <script>
-        // Akordiyon Sistemi
+        // Akordiyon
         var acc = document.getElementsByClassName("accordion-btn");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
@@ -200,33 +152,35 @@
             });
         }
 
-        // Gelişmiş Site içi Arama
-        function searchSite() {
+        // AKILLI ARAMA: Ünite ismine göre sınıf butonunu bulur
+        function smartSearch() {
             let input = document.getElementById('searchInput').value.toLowerCase();
-            let items = document.getElementsByClassName('searchable');
-            for (let i = 0; i < items.length; i++) {
-                if (items[i].innerText.toLowerCase().includes(input)) {
-                    items[i].style.display = "block";
+            let classes = document.getElementsByClassName('class-item');
+            for (let i = 0; i < classes.length; i++) {
+                let keywords = classes[i].getAttribute('data-keywords');
+                let className = classes[i].innerText.toLowerCase();
+                if (keywords.includes(input) || className.includes(input)) {
+                    classes[i].style.display = "block";
                 } else {
-                    items[i].style.display = "none";
+                    classes[i].style.display = "none";
                 }
             }
         }
 
-        // Günlük Otomatik Değişen Soru Görevi
-        const dailyQuestions = [
-            "Mevsimlerin Oluşumu'ndan 10 soru çöz!",
-            "DNA ve Genetik Kod konusuna odaklan!",
-            "Basınç konusundan testlerini bitir!",
-            "Madde ve Isı özetlerini oku!",
-            "Işığın Kırılması sorularına bak!",
-            "Vücudumuzdaki Sistemler tekrarı yap!",
-            "Elektrik Devreleri deneyi yap!"
-        ];
-        const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
-        document.getElementById("dailyQuestion").innerHTML = "📅 Bugün: " + dailyQuestions[dayOfYear % dailyQuestions.length];
+        // SINIFLARA ÖZEL GÜNLÜK GÖREVLER
+        const dailyTasks = {
+            5: ["Ay'ın evrelerini çiz!", "Canlılar dünyası testi çöz."],
+            6: ["Güneş tutulması şeması yap.", "Dolaşım sistemi sorularına bak."],
+            7: ["Hücre ve organelleri tekrar et.", "Kuvvet-İş problemlerini çöz."],
+            8: ["Mevsimlerin oluşumu 10 soru çöz.", "DNA eşlenmesi videosu izle."]
+        };
+        let taskHTML = "";
+        for (let grade in dailyTasks) {
+            taskHTML += `<li class="task-item"><b>${grade}. Sınıf:</b> ${dailyTasks[grade][Math.floor(Math.random() * dailyTasks[grade].length)]}</li>`;
+        }
+        document.getElementById("dailyTasks").innerHTML = taskHTML;
 
-        // LGS Sayaç Fonksiyonu
+        // Sayaç
         function updateCountdown() {
             const lgsDate = new Date("June 7, 2026 09:30:00").getTime();
             const now = new Date().getTime();
