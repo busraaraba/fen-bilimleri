@@ -6,68 +6,118 @@
     <title>Dijital Fen Akademisi - Büşra Araba</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Genel Estetik ve Krem Arka Plan */
-        body { background-color: #fdfaf1; color: #2c3e50; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
-        .hero { background: linear-gradient(135deg, #38a3a5, #22577a); padding: 40px 20px; color: white; text-align: center; border-bottom: 4px solid #1a3a5a; }
-        
-        /* Arama Kutusu */
-        .search-container { margin: 15px auto; max-width: 450px; padding: 0 20px; }
-        .search-box { width: 100%; padding: 10px 20px; border-radius: 20px; border: 2px solid #38a3a5; outline: none; }
+        /* Modern ve Naif Krem Tasarımı */
+        body { 
+            background-color: #fdfaf1; 
+            color: #2c3e50; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            overflow-x: hidden; 
+        }
 
-        /* Sayaç */
+        /* Hero Alanı: Naif ve Canlı */
+        .hero { 
+            background: linear-gradient(135deg, #48cae4, #0096c7); 
+            padding: 40px 15px; 
+            color: white; 
+            text-align: center; 
+            border-bottom: 5px solid #0077b6; 
+        }
+        .hero h1 { font-size: 1.8rem; margin: 0; letter-spacing: 1px; }
+        .hero p { font-size: 0.95rem; opacity: 0.9; margin-top: 10px; font-style: italic; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* Minimal Küçük Arama Kutusu */
+        .search-container { margin: 15px auto; max-width: 280px; padding: 0 15px; }
+        .search-box { 
+            width: 100%; padding: 8px 15px; border-radius: 20px; 
+            border: 1.5px solid #48cae4; outline: none; font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Minimal LGS Sayacı */
         .countdown-wrap { text-align: center; padding: 10px 0; }
         #countdown { display: flex; justify-content: center; gap: 8px; }
-        .time-box { background: #22577a; color: #ffca3a; padding: 5px 10px; border-radius: 8px; min-width: 55px; font-weight: bold; font-size: 0.9rem; }
+        .time-box { 
+            background: #002855; 
+            color: #ffb703; 
+            padding: 6px 10px; 
+            border-radius: 8px; 
+            min-width: 50px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .time-box span { font-size: 1.1rem; display: block; font-weight: bold; }
 
-        /* Ana Menü Yapısı */
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-        
-        /* Sınıflar Yine Alt Alta */
-        .class-list { margin-bottom: 25px; }
-        .class-item { display: block; text-decoration: none; background: white; color: #22577a; padding: 18px; margin-bottom: 8px; border-radius: 12px; font-weight: bold; text-align: center; border: 1px solid #e0e0e0; transition: 0.3s; }
+        /* İçerik Konteyneri */
+        .container { max-width: 600px; margin: 0 auto; padding: 15px; }
+
+        /* Sınıf Butonları - Alt Alta */
+        .class-item { 
+            display: block; text-decoration: none; background: white; color: #0077b6; 
+            padding: 15px; margin-bottom: 10px; border-radius: 12px; font-weight: bold; 
+            text-align: center; border: 1px solid #e0e0e0; transition: 0.3s;
+        }
         .class-item:hover { background: #f0faff; transform: translateY(-2px); }
 
-        /* DİĞER BÖLÜMLER YAN YANA (GRID) */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Yan yana iki sütun */
-            gap: 12px;
+        /* Yan Yana Grid Bölümleri */
+        .feature-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+            margin-top: 10px;
         }
 
         .accordion-btn { 
-            cursor: pointer; padding: 15px; width: 100%; border: none; text-align: center; 
-            font-size: 0.95rem; border-radius: 12px; font-weight: bold; color: white;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            min-height: 80px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            cursor: pointer; padding: 12px; width: 100%; border: none; text-align: center; 
+            font-size: 0.85rem; border-radius: 10px; font-weight: bold; color: white; 
+            min-height: 60px; display: flex; align-items: center; justify-content: center; 
         }
 
-        .btn-orange { background-color: #f3722c; } /* Soru Çözüm */
-        .btn-teal { background-color: #43aa8b; }   /* Deney Köşesi */
-        .btn-blue { background-color: #4d908e; }   /* Hızlı Tekrar */
-        .btn-red { background-color: #d90429; }    /* Hatalar Köşesi */
-        .btn-purple { background-color: #6a4c93; grid-column: span 2; } /* Motivasyon - Altı Kaplasın */
+        .btn-orange { background-color: #f3722c; } 
+        .btn-teal { background-color: #43aa8b; } 
+        .btn-blue { background-color: #4d908e; } 
+        .btn-red { background-color: #d90429; } 
+        .btn-purple { background-color: #6a4c93; grid-column: span 2; }
 
-        /* Panel Açılışı - Grid içinde mutlak konumlanmasın diye ayar */
-        .grid-item { position: relative; }
         .panel { 
             background-color: white; max-height: 0; overflow: hidden; 
-            transition: max-height 0.4s ease-out; border-radius: 12px; 
-            border: 1px solid #eee; margin-top: 5px; font-size: 0.9rem;
+            transition: max-height 0.3s ease-out; border-radius: 10px; 
+            border: 1px solid #eee; margin-top: 5px; 
         }
-        .panel-content { padding: 15px; text-align: left; }
+        .panel-content { padding: 12px; font-size: 0.85rem; text-align: left; line-height: 1.5; }
+        
+        /* Günlük Soru Kutusu */
+        .daily-task-box { 
+            background: #fff3e0; 
+            padding: 10px; 
+            border-radius: 8px; 
+            border-left: 4px solid #f3722c; 
+            margin-top: 10px; 
+            font-weight: bold; 
+            color: #e65100; 
+        }
 
-        footer { background: #f1f1f1; padding: 30px; text-align: center; margin-top: 40px; border-top: 1px solid #ddd; }
+        /* Footer */
+        footer { 
+            margin-top: 40px; 
+            padding: 30px 15px; 
+            background-color: #f1f1f1; 
+            text-align: center; 
+            border-top: 1px solid #ddd; 
+        }
+        .footer-text { font-size: 0.9rem; color: #444; margin-bottom: 5px; }
+        .footer-contact { font-size: 0.85rem; color: #666; }
     </style>
 </head>
 <body>
 
     <section class="hero">
-        <h1 style="margin:0; font-size: 2rem;">DİJİTAL FEN AKADEMİSİ</h1>
-        <p style="margin-top:10px; font-size: 1rem;">Fen bilimlerinde başarıya giden yolculuğun burada başlıyor.</p>
+        <h1>DİJİTAL FEN AKADEMİSİ</h1>
+        <p>Fen bilimlerinin dijital dünyasına hoş geldin! Keşfetmek, öğrenmek ve başarmak için doğru yerdesin.</p>
     </section>
 
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-box" placeholder="Ünite veya kavram ara..." onkeyup="searchFunction()">
+        <input type="text" id="searchInput" class="search-box" placeholder="Konu veya sınıf ara..." onkeyup="searchSite()">
     </div>
 
     <div class="countdown-wrap">
@@ -79,62 +129,65 @@
     </div>
 
     <div class="container">
-        <div class="class-list">
-            <a href="sinif5.html" class="class-item">5. Sınıf Fen Bilimleri</a>
-            <a href="sinif6.html" class="class-item">6. Sınıf Fen Bilimleri</a>
-            <a href="sinif7.html" class="class-item">7. Sınıf Fen Bilimleri</a>
-            <a href="sinif8.html" class="class-item">8. Sınıf Fen Bilimleri</a>
+        <div id="classList">
+            <a href="sinif5.html" class="class-item searchable">5. Sınıf Fen Bilimleri</a>
+            <a href="sinif6.html" class="class-item searchable">6. Sınıf Fen Bilimleri</a>
+            <a href="sinif7.html" class="class-item searchable">7. Sınıf Fen Bilimleri</a>
+            <a href="sinif8.html" class="class-item searchable">8. Sınıf Fen Bilimleri</a>
         </div>
 
         <div class="feature-grid">
-            
             <div class="grid-item">
                 <button class="accordion-btn btn-orange">📝 Soru Çözüm</button>
                 <div class="panel">
                     <div class="panel-content">
-                        <a href="#" style="color:#f3722c; text-decoration:none;">• LGS Çıkmışlar</a><br>
-                        <a href="#" style="color:#f3722c; text-decoration:none;">• Günlük 10 Soru</a>
+                        <div class="searchable">• LGS En Çok Çıkanlar</div>
+                        <div class="daily-task-box" id="dailyQuestion">Yükleniyor...</div>
                     </div>
                 </div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-teal">🧪 Deney Köşesi</button>
-                <div class="panel">
-                    <div class="panel-content" style="color:#888;">Yakında burada...</div>
-                </div>
+                <div class="panel"><div class="panel-content searchable">Gelecekteki bilimsel deneyler için ayrılmıştır...</div></div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-blue">⚡ Hızlı Tekrar</button>
-                <div class="panel">
-                    <div class="panel-content" style="color:#888;">İçerik bekleniyor...</div>
-                </div>
+                <div class="panel"><div class="panel-content searchable">Kısa özetler yakında burada...</div></div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-red">❌ Hata Köşesi</button>
-                <div class="panel">
-                    <div class="panel-content" style="color:#888;">Doğru bilinen yanlışlar...</div>
-                </div>
+                <div class="panel"><div class="panel-content searchable">Doğrusunu öğrenmek için beklemede kal...</div></div>
             </div>
 
             <div class="grid-item" style="grid-column: span 2;">
                 <button class="accordion-btn btn-purple">📚 Motivasyon Notları</button>
                 <div class="panel">
                     <div class="panel-content">
-                        <i>"Hayatta en hakiki mürşit ilimdir, fendir." - Atatürk</i>
+                        <div class="searchable">1. "Hayatta en hakiki mürşit ilimdir, fendir." - ATATÜRK</div>
+                        <div class="searchable">2. "Hayal gücü bilgiden daha önemlidir." - Albert Einstein</div>
+                        <div class="searchable">3. "Dahi, %1 ilham ve %99 terdir." - Thomas Edison</div>
+                        <div class="searchable">4. "Bizi birbirimizden ayıran zeka değil, emektir." - Aziz Sancar</div>
+                        <div class="searchable">5. "Eğitim dünyayı değiştiren en güçlü silahtır." - Mandela</div>
+                        <div class="searchable">6. "Hiçbir zaman kaybetmem; ya kazanırım ya da öğrenirim." - Mandela</div>
+                        <div class="searchable">7. "Başarı bir yolculuktur, bir varış noktası değil." - B. Sweetland</div>
+                        <div class="searchable">8. "Hiçbir şey karanlık bir beyinden daha korkunç değildir." - Goethe</div>
+                        <div class="searchable">9. "Öğrenmek akıntıya karşı yüzmek gibidir." - B. Britten</div>
+                        <div class="searchable">10. "Zor iş, birikmiş kolay işlerin toplamıdır." - Henry Ford</div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
     <footer>
-        <p style="margin-bottom: 10px;">Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.</p>
-        <p style="color: #666;">Sorularınız için ulaşabilirsiniz:</p>
-        📧 <a href="mailto:busraaraba@gmail.com" style="color: #38a3a5; text-decoration: none; font-weight: bold;">busraaraba@gmail.com</a>
+        <div class="footer-text">Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.</div>
+        <div class="footer-contact">
+            Sorularınız için ulaşabilirsiniz: <br>
+            📧 <a href="mailto:busraaraba@gmail.com" style="color: #0096c7; text-decoration: none; font-weight: bold;">busraaraba@gmail.com</a>
+        </div>
     </footer>
 
     <script>
@@ -143,32 +196,46 @@
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) { panel.style.maxHeight = null; } 
-                else { panel.style.maxHeight = panel.scrollHeight + "px"; }
+                panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
             });
         }
 
-        // Arama (Sadece sınıflar için)
-        function searchFunction() {
-            var input = document.getElementById("searchInput").value.toUpperCase();
-            var items = document.getElementsByClassName("class-item");
-            for (var i = 0; i < items.length; i++) {
-                items[i].style.display = items[i].innerHTML.toUpperCase().includes(input) ? "" : "none";
+        // Gelişmiş Site içi Arama
+        function searchSite() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByClassName('searchable');
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].innerText.toLowerCase().includes(input)) {
+                    items[i].style.display = "block";
+                } else {
+                    items[i].style.display = "none";
+                }
             }
         }
 
-        // LGS Sayaç
+        // Günlük Otomatik Değişen Soru Görevi
+        const dailyQuestions = [
+            "Mevsimlerin Oluşumu'ndan 10 soru çöz!",
+            "DNA ve Genetik Kod konusuna odaklan!",
+            "Basınç konusundan testlerini bitir!",
+            "Madde ve Isı özetlerini oku!",
+            "Işığın Kırılması sorularına bak!",
+            "Vücudumuzdaki Sistemler tekrarı yap!",
+            "Elektrik Devreleri deneyi yap!"
+        ];
+        const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+        document.getElementById("dailyQuestion").innerHTML = "📅 Bugün: " + dailyQuestions[dayOfYear % dailyQuestions.length];
+
+        // LGS Sayaç Fonksiyonu
         function updateCountdown() {
             const lgsDate = new Date("June 7, 2026 09:30:00").getTime();
             const now = new Date().getTime();
             const gap = lgsDate - now;
-            const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-            document.getElementById("days").innerText = Math.floor(gap / day);
-            document.getElementById("hours").innerText = Math.floor((gap % day) / hour);
-            document.getElementById("minutes").innerText = Math.floor((gap % hour) / minute);
+            document.getElementById("days").innerText = Math.floor(gap / 86400000);
+            document.getElementById("hours").innerText = Math.floor((gap % 86400000) / 3600000);
+            document.getElementById("minutes").innerText = Math.floor((gap % 3600000) / 60000);
         }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        setInterval(updateCountdown, 1000); updateCountdown();
     </script>
 </body>
 </html>
