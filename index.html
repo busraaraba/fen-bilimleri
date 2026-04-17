@@ -3,18 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fen Bilimleri Akademi</title>
+    <title>Fen Bilimleri Portalı - Büşra Araba</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .author-badge {
+            background-color: #fbc02d; /* Sarı */
+            color: #001f3f; /* Lacivert */
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid #001f3f;
+        }
+        .hero h2 {
+            margin-bottom: 5px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Fen Bilimleri Ders Portalına Hoş Geldiniz</h1>
-        <p>Başarıya giden yolda sınıfını seç ve keşfetmeye başla!</p>
-    </div>
+
+    <section class="hero">
+        <h1>Dijital Fen Akademisi</h1>
+        <h2>Bilimin Işığında Geleceğe...</h2>
+        
+        <div class="author-badge">
+            🚀 Bu site Fen Bilimleri Öğretmeni Büşra ARABA tarafından hazırlanmıştır.
+        </div>
+    </section>
 
     <div class="countdown-section">
-        <h3>LGS 2026'ya Ne Kadar Kaldı?</h3>
-        <div id="timer">Hesaplanıyor...</div>
+        <h3>LGS'ye Kalan Zaman</h3>
+        <p>Geleceğin bilim insanları için geri sayım başladı!</p>
     </div>
 
     <div class="selection-container">
@@ -24,27 +48,10 @@
         <a href="sinif8.html" class="card">8. Sınıf</a>
     </div>
 
-    <div class="lab-section">
-        <h2>🔬 Sanal Deney Laboratuvarı</h2>
-        <p>Scratch ile hazırladığımız interaktif deneyleri sınıfların içindeki konularda bulabilirsin!</p>
-    </div>
-
     <footer class="contact-section">
-        <h3>İletişim & Sorular</h3>
-        <p>Anlamadığınız yerleri sormak için bana ulaşabilirsiniz:</p>
-        <p>📧 <strong>busraaraba@gmail.com</strong></p>
+        <p>© 2026 - Tüm Hakları Saklıdır.</p>
+        <p>İletişim: busraaraba@gmail.com</p>
     </footer>
 
-    <script>
-        const targetDate = new Date("June 7, 2026 09:30:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("timer").innerHTML = days + " Gün " + hours + " Saat " + minutes + " Dakika ";
-        }, 1000);
-    </script>
 </body>
 </html>
