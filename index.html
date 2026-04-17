@@ -14,10 +14,10 @@
 
         /* Arama Kutusu */
         .search-container { margin: 15px auto; max-width: 280px; padding: 0 15px; }
-        .search-box { width: 100%; padding: 8px 15px; border-radius: 20px; border: 1.5px solid #48cae4; outline: none; font-size: 0.9rem; }
+        .search-box { width: 100%; padding: 8px 15px; border-radius: 20px; border: 1.5px solid #48cae4; outline: none; font-size: 0.9rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
 
-        /* Minimal LGS Sayacı */
-        .countdown-wrap { text-align: center; padding: 10px 0; }
+        /* LGS Sayacı (Geri Sayım) */
+        .countdown-wrap { text-align: center; padding: 10px 0; margin-bottom: 10px; }
         #countdown { display: flex; justify-content: center; gap: 8px; }
         .time-box { background: #002855; color: #ffb703; padding: 6px 10px; border-radius: 8px; min-width: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .time-box span { font-size: 1.1rem; display: block; font-weight: bold; }
@@ -25,20 +25,20 @@
         .container { max-width: 600px; margin: 0 auto; padding: 15px; }
         .class-item { display: block; text-decoration: none; background: white; color: #0077b6; padding: 15px; margin-bottom: 10px; border-radius: 12px; font-weight: bold; text-align: center; border: 1px solid #e0e0e0; transition: 0.3s; }
 
-        /* Grid Yapısı */
+        /* Izgara Yapısı */
         .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
         .accordion-btn { cursor: pointer; padding: 12px; width: 100%; border: none; text-align: center; font-size: 0.85rem; border-radius: 10px; font-weight: bold; color: white; min-height: 60px; display: flex; align-items: center; justify-content: center; }
         .btn-orange { background-color: #f3722c; } 
         .btn-green { background-color: #43aa8b; } 
         .btn-blue { background-color: #4d908e; } 
         .btn-red { background-color: #d90429; } 
-        .btn-lgs { background-color: #003566; grid-column: span 2; } /* Yeni Eklenen LGS Bölümü */
+        .btn-lgs { background-color: #003566; grid-column: span 2; }
         .btn-purple { background-color: #6a4c93; grid-column: span 2; }
 
         .panel { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-radius: 10px; border: 1px solid #eee; margin-top: 5px; }
         .panel-content { padding: 12px; font-size: 0.85rem; text-align: left; }
 
-        /* Estetik Düzenlemeler */
+        /* Motivasyon Sözleri Estetiği */
         .quote-container { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .quote-text { font-style: italic; color: #444; display: block; margin-bottom: 4px; }
         .quote-author { display: block; text-align: right; font-weight: bold; font-size: 0.8rem; color: #0077b6; }
@@ -89,17 +89,17 @@
 
             <div class="grid-item">
                 <button class="accordion-btn btn-green">🧪 Deney Köşesi</button>
-                <div class="panel"><div class="panel-content">Büşra Öğretmen içeriklerini bekliyor...</div></div>
+                <div class="panel"><div class="panel-content">İçerikler Büşra Öğretmen tarafından eklenecek...</div></div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-blue">⚡ Hızlı Tekrar</button>
-                <div class="panel"><div class="panel-content">Önemli notlar yakında burada...</div></div>
+                <div class="panel"><div class="panel-content">Özet notlar hazırlanıyor...</div></div>
             </div>
 
             <div class="grid-item">
                 <button class="accordion-btn btn-red">❌ Hata Köşesi</button>
-                <div class="panel"><div class="panel-content">En sık yapılan hatalar...</div></div>
+                <div class="panel"><div class="panel-content">Sık yapılan hatalar yakında burada...</div></div>
             </div>
 
             <div class="grid-item" style="grid-column: span 2;">
@@ -152,6 +152,7 @@
     </footer>
 
     <script>
+        // Akordiyon Sistemi
         var acc = document.getElementsByClassName("accordion-btn");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
@@ -160,6 +161,7 @@
             });
         }
 
+        // Akıllı Arama
         function smartSearch() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let classes = document.getElementsByClassName('class-item');
@@ -174,6 +176,7 @@
             }
         }
 
+        // Günlük Görevler (Sınıfa Özel)
         const dailyTasks = {
             5: ["Ay'ın evrelerini çiz!", "Güneş ve Dünya'nın büyüklüklerini kıyasla."],
             6: ["Sindirim sistemi organlarını say.", "Dengelenmiş kuvvetlere 3 örnek ver."],
@@ -186,15 +189,27 @@
         }
         document.getElementById("dailyTasks").innerHTML = taskHTML;
 
+        // LGS Geri Sayım Fonksiyonu
         function updateCountdown() {
             const lgsDate = new Date("June 7, 2026 09:30:00").getTime();
             const now = new Date().getTime();
             const gap = lgsDate - now;
-            document.getElementById("days").innerText = Math.floor(gap / 86400000);
-            document.getElementById("hours").innerText = Math.floor((gap % 86400000) / 3600000);
-            document.getElementById("minutes").innerText = Math.floor((gap % 3600000) / 60000);
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const d = Math.floor(gap / day);
+            const h = Math.floor((gap % day) / hour);
+            const m = Math.floor((gap % hour) / minute);
+
+            document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+            document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+            document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
         }
-        setInterval(updateCountdown, 1000); updateCountdown();
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
