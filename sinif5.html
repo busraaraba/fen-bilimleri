@@ -6,51 +6,12 @@
     <title>5. Sınıf Fen Bilimleri - Büşra Öğretmen</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Bu sayfaya özel ek tasarımlar */
-        .accordion {
-            background-color: #6a1b9a; /* Mor */
-            color: white;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.4s;
-            margin-bottom: 5px;
-            border-radius: 8px;
-        }
-
-        .active, .accordion:hover {
-            background-color: #001f3f; /* Lacivert */
-        }
-
-        .panel {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-            border-radius: 0 0 8px 8px;
-            margin-bottom: 15px;
-        }
-
-        .unit-image {
-            width: 100%;
-            max-width: 600px;
-            border-radius: 10px;
-            margin: 20px auto;
-            display: block;
-            border: 3px solid #f0faff;
-        }
-
-        .unit-text {
-            padding: 20px 0;
-            color: #333;
-            text-align: left;
-        }
+        .accordion { background-color: #6a1b9a; color: white; cursor: pointer; padding: 18px; width: 100%; border: none; text-align: left; outline: none; font-size: 18px; font-weight: bold; transition: 0.4s; margin-bottom: 5px; border-radius: 8px; }
+        .active, .accordion:hover { background-color: #001f3f; }
+        .panel { padding: 0 18px; background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; border-radius: 0 0 8px 8px; margin-bottom: 15px; }
+        .unit-image { width: 100%; max-width: 600px; border-radius: 10px; margin: 20px auto; display: block; border: 3px solid #f0faff; }
+        .unit-text { padding: 20px 0; color: #333; text-align: left; line-height: 1.6; }
+        .unit-text strong { color: #6a1b9a; }
     </style>
 </head>
 <body>
@@ -59,70 +20,74 @@
     <div class="content-wrapper">
         <header style="text-align: center; margin-bottom: 30px;">
             <h1 style="color: #001f3f;">5. Sınıf Fen Bilimleri Üniteleri</h1>
-            <p>İncelemek istediğin ünitenin üzerine tıkla!</p>
+            <p>Üniteleri açmak için başlıkların üzerine tıklayabilirsin.</p>
         </header>
 
         <button class="accordion">1. ÜNİTE: GÜNEŞ, DÜNYA VE AY</button>
         <div class="panel">
-            <img src="unite1.jpg" alt="Güneş Dünya Ay" class="unit-image">
+            <img src="unite1.png" alt="Güneş Dünya Ay" class="unit-image">
             <div class="unit-text">
                 <p>Bu ünite, öğrencinin yerel çevresinden çıkıp evrensel bir bakış açısı kazandığı ilk yerdir.</p>
-                <p><strong>Güneş'in Gizemi:</strong> Güneş, sıcak gazlardan oluşan orta büyüklükte bir yıldızdır. Tıpkı Dünya gibi katmanlardan oluşur. Galileo bu lekeleri gözlemleyerek Güneş'in kendi ekseni etrafında döndüğünü kanıtlamıştır.</p>
-                <p><strong>Ay'ın Coğrafyası:</strong> Ay'ın atmosferi yok denecek kadar azdır. Meteorlar yüzeye çarparak kraterleri oluşturur. Hava olayları görülmez, bu yüzden Ay tozuna basılan bir ayak izi sonsuza dek bozulmadan kalabilir.</p>
-                <p><strong>Ay'ın Hareketleri ve Evreleri:</strong> Kendi ekseni etrafındaki dönüşü ile Dünya etrafındaki dolanma süresi eşittir (27.3 gün). Bu yüzden hep aynı yüzü görürüz. Evreler: Yeni Ay, İlk Dördün, Dolunay, Son Dördün.</p>
+                <p><strong>Güneş'in Gizemi:</strong> Güneş, sıcak gazlardan oluşan orta büyüklükte bir yıldızdır. Katmanlardan oluşur (çekirdek, ışık küre, renk küre ve taç küre). Galileo, Güneş lekelerini gözlemleyerek Güneş'in kendi ekseni etrafında döndüğünü kanıtlamıştır.</p>
+                <p><strong>Ay'ın Coğrafyası:</strong> Ay'ın atmosferi yok denecek kadar azdır. Meteorlar yüzeye çarparak kraterleri oluşturur. Hava olayları (rüzgar, yağmur) görülmez, bu yüzden Ay tozuna basılan bir ayak izi bozulmadan kalabilir.</p>
+                <p><strong>Ay'ın Hareketleri ve Evreleri:</strong> Kendi ekseni etrafındaki dönüşü ile Dünya etrafındaki dolanma süresi eşit (27.3 gün) olduğu için Ay'ın hep aynı yüzünü görürüz. Evreler: <strong>Yeni Ay, İlk Dördün, Dolunay, Son Dördün.</strong></p>
             </div>
         </div>
 
         <button class="accordion">2. ÜNİTE: CANLILAR DÜNYASI</button>
         <div class="panel">
-            <img src="unite2.jpg" alt="Canlılar Dünyası" class="unit-image">
+            <img src="unite2.png" alt="Canlılar Dünyası" class="unit-image">
             <div class="unit-text">
-                <p><strong>Mikroskobik Canlılar:</strong> Bakteriler en basit yapılı olanlarıdır. Bazıları faydalı (sütten peynir), bazıları zararlıdır.</p>
-                <p><strong>Mantarlar:</strong> Kendi besinlerini üretemezler, bitki değildirler. Şapkalı, Küf, Maya ve Parazit mantarları olarak ayrılırlar.</p>
-                <p><strong>Bitkiler ve Hayvanlar:</strong> Çiçekli ve çiçeksiz bitkiler; Omurgalı ve omurgasız hayvanlar olarak sınıflandırılırlar. Memeliler en gelişmiş gruptur.</p>
+                <p><strong>Mikroskobik Canlılar:</strong> Sadece mikroskopla görülebilirler. Bakteriler en basit yapılı olanlarıdır. Sütün peynire dönüşmesini sağlayan faydalı olanları da vardır.</p>
+                <p><strong>Mantarlar:</strong> Kendi besinlerini üretemezler, bitki değildirler. Şapkalı, Küf, Maya ve Parazit mantarları olarak 4'e ayrılırlar.</p>
+                <p><strong>Bitkiler ve Hayvanlar:</strong> Bitkiler çiçekli ve çiçeksiz; hayvanlar ise omurgalı ve omurgasız olarak sınıflandırılır. Omurgalılar: Balıklar, Kurbağalar, Sürüngenler, Kuşlar ve Memelilerdir.</p>
             </div>
         </div>
 
         <button class="accordion">3. ÜNİTE: KUVVETİN ÖLÇÜLMESİ VE SÜRTÜNME</button>
         <div class="panel">
-            <img src="unite3.jpg" alt="Kuvvet ve Sürtünme" class="unit-image">
+            <img src="unite3.jpeg" alt="Kuvvet ve Sürtünme" class="unit-image">
             <div class="unit-text">
-                <p><strong>Kuvvet:</strong> Dinamometre ile ölçülür. Birimi Newton'dır. Sürtünme kuvveti harekete zıt yönlüdür.</p>
-                <p><strong>Hava ve Su Direnci:</strong> Araçlar bu direnci azaltmak için aerodinamik tasarlanır (uçak burunları gibi). Paraşütler ise direnci artırmak için geniş tasarlanır.</p>
+                <p><strong>Kuvvetin Ölçülmesi:</strong> Dinamometre ile ölçülür. İçindeki yayın esnekliği ne kadar fazlaysa o kadar hassas ölçüm yapar.</p>
+                <p><strong>Sürtünme Kuvveti:</strong> İki yüzeyin temasıyla oluşur ve harekete zıt yönlüdür. Yüzey cinsine bağlıdır; camda az, halıda fazladır.</p>
+                <p><strong>Hava ve Su Direnci:</strong> Bu direnci azaltmak için uçakların burnu sivri, gemiler "V" şeklinde tasarlanır (aerodinamik).</p>
             </div>
         </div>
 
         <button class="accordion">4. ÜNİTE: MADDE VE DEĞİŞİM</button>
         <div class="panel">
-            <img src="unite4.jpg" alt="Madde ve Değişim" class="unit-image">
+            <img src="unite4.jpeg" alt="Madde ve Değişim" class="unit-image">
             <div class="unit-text">
-                <p><strong>Hâl Değişimi:</strong> Erime, donma, buharlaşma, yoğuşma, süblimleşme ve kırağılaşma olaylarını öğreniyoruz.</p>
-                <p><strong>Isı ve Sıcaklık:</strong> Isı enerjidir, sıcaklık ölçümdür. Maddeler ısı alınca genleşir, ısı verince büzülür.</p>
+                <p><strong>Hâl Değişimi:</strong> Erime, buharlaşma ve süblimleşme ısı alarak; yoğuşma, donma ve kırağılaşma ısı vererek gerçekleşir.</p>
+                <p><strong>Isı ve Sıcaklık:</strong> Isı bir enerji türüdür (kalorimetre kabı), sıcaklık bir göstergedir (termometre). Isı akışı sıcaktan soğuğa doğrudur.</p>
+                <p><strong>Genleşme ve Büzülme:</strong> Isı alan madde hacminin artmasına genleşme, ısı veren maddenin hacminin küçülmesine büzülme denir.</p>
             </div>
         </div>
 
         <button class="accordion">5. ÜNİTE: IŞIĞIN YAYILMASI</button>
         <div class="panel">
-            <img src="unite5.jpg" alt="Işığın Yayılması" class="unit-image">
+            <img src="unite5.jpeg" alt="Işığın Yayılması" class="unit-image">
             <div class="unit-text">
-                <p><strong>Yansıma:</strong> Düzgün ve dağınık yansıma kurallarını inceliyoruz. Gelme açısı her zaman yansıma açısına eşittir.</p>
-                <p><strong>Gölge:</strong> Işık opak maddelerden geçemez. Işık kaynağı cismi yaklaştırılırsa gölge büyür.</p>
+                <p><strong>Işığın Yayılması:</strong> Işık her yöne ve doğrusal yolla yayılır. Işığı geçirme durumuna göre maddeler Saydam, Yarı Saydam ve Opak olarak ayrılır.</p>
+                <p><strong>Yansıma ve Gölge:</strong> Gelme açısı her zaman yansıma açısına eşittir. Işık opak bir maddeyle karşılaşınca arkasında karanlık bir alan (tam gölge) oluşturur.</p>
             </div>
         </div>
 
         <button class="accordion">6. ÜNİTE: İNSAN VE ÇEVRE</button>
         <div class="panel">
-            <img src="unite6.jpg" alt="İnsan ve Çevre" class="unit-image">
+            <img src="unite6.jpeg" alt="İnsan ve Çevre" class="unit-image">
             <div class="unit-text">
-                <p><strong>Biyoçeşitlilik:</strong> Ülkemizin zengin canlı türlerini ve nesli tükenme tehlikesi olan canlıları (Anadolu Kaplanı gibi) korumayı öğreniyoruz.</p>
+                <p><strong>Biyoçeşitlilik:</strong> Bir ekosistemdeki canlı zenginliğidir. Türkiye biyoçeşitlilik açısından çok zengindir (Van Kedisi, Ters Lale vb.).</p>
+                <p><strong>Çevre Sorunları:</strong> Orman yangınları, kirlilik ve bilinçsiz avlanma biyoçeşitliliği tehdit eder. Deprem, heyelan ve kasırga gibi doğal afetlere karşı önlemler hayati önem taşır.</p>
             </div>
         </div>
 
         <button class="accordion">7. ÜNİTE: ELEKTRİK DEVRE ELEMANLARI</button>
         <div class="panel">
-            <img src="unite7.jpg" alt="Elektrik Devresi" class="unit-image">
+            <img src="unite7.jpeg" alt="Elektrik Devresi" class="unit-image">
             <div class="unit-text">
-                <p><strong>Devre Kurma:</strong> Pil ve ampul sayıları ile parlaklık arasındaki ilişkiyi deneylerle (bağımlı/bağımsız değişken) keşfediyoruz.</p>
+                <p><strong>Devre Elemanları:</strong> Pil, ampul, anahtar ve bağlantı kabloları sembollerle gösterilir (ortak bilim dili).</p>
+                <p><strong>Parlaklık Kontrolü:</strong> Pil sayısı artarsa parlaklık artar. Ampul sayısı artarsa parlaklık azalır. Burada değişkenleri (Bağımlı, Bağımsız, Kontrollü) doğru belirlemek çok önemlidir.</p>
             </div>
         </div>
 
@@ -131,7 +96,6 @@
     <script>
         var acc = document.getElementsByClassName("accordion");
         var i;
-
         for (i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
