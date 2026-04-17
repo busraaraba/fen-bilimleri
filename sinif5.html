@@ -18,6 +18,15 @@
     <nav><a href="index.html">⬅ Ana Sayfaya Dön</a></nav>
     
     <div class="content-wrapper">
+        <div class="daily-question">
+            <div class="badge">💡 Günün Sorusu</div>
+            <h3>Ay'ın neden hep aynı yüzünü görürüz?</h3>
+            <p id="answer" style="display:none; color: #2e8b57; font-weight: bold;">
+                Cevap: Çünkü Ay'ın kendi ekseni etrafında dönme süresi ile Dünya etrafında dolanma süresi birbirine eşittir (yaklaşık 27.3 gün)!
+            </p>
+            <button onclick="toggleAnswer()" id="btn-answer">Cevabı Gör</button>
+        </div>
+
         <header style="text-align: center; margin-bottom: 30px;">
             <h1 style="color: #001f3f;">5. Sınıf Fen Bilimleri Üniteleri</h1>
             <p>Üniteleri açmak için başlıkların üzerine tıklayabilirsin.</p>
@@ -27,10 +36,8 @@
         <div class="panel">
             <img src="unite1.png" alt="Güneş Dünya Ay" class="unit-image">
             <div class="unit-text">
-                <p>Bu ünite, öğrencinin yerel çevresinden çıkıp evrensel bir bakış açısı kazandığı ilk yerdir.</p>
-                <p><strong>Güneş'in Gizemi:</strong> Güneş, sıcak gazlardan oluşan orta büyüklükte bir yıldızdır. Katmanlardan oluşur (çekirdek, ışık küre, renk küre ve taç küre). Galileo, Güneş lekelerini gözlemleyerek Güneş'in kendi ekseni etrafında döndüğünü kanıtlamıştır.</p>
-                <p><strong>Ay'ın Coğrafyası:</strong> Ay'ın atmosferi yok denecek kadar azdır. Meteorlar yüzeye çarparak kraterleri oluşturur. Hava olayları (rüzgar, yağmur) görülmez, bu yüzden Ay tozuna basılan bir ayak izi bozulmadan kalabilir.</p>
-                <p><strong>Ay'ın Hareketleri ve Evreleri:</strong> Kendi ekseni etrafındaki dönüşü ile Dünya etrafındaki dolanma süresi eşit (27.3 gün) olduğu için Ay'ın hep aynı yüzünü görürüz. Evreler: <strong>Yeni Ay, İlk Dördün, Dolunay, Son Dördün.</strong></p>
+                <p><strong>Güneş'in Gizemi:</strong> Güneş orta büyüklükte bir yıldızdır. Galileo, Güneş lekelerini gözlemleyerek onun döndüğünü kanıtlamıştır.</p>
+                <p><strong>Ay'ın Coğrafyası:</strong> Atmosferi yok denecek kadar azdır, bu yüzden kraterler oluşur ve ayak izleri sonsuza dek kalabilir.</p>
             </div>
         </div>
 
@@ -38,9 +45,7 @@
         <div class="panel">
             <img src="unite2.png" alt="Canlılar Dünyası" class="unit-image">
             <div class="unit-text">
-                <p><strong>Mikroskobik Canlılar:</strong> Sadece mikroskopla görülebilirler. Bakteriler en basit yapılı olanlarıdır. Sütün peynire dönüşmesini sağlayan faydalı olanları da vardır.</p>
-                <p><strong>Mantarlar:</strong> Kendi besinlerini üretemezler, bitki değildirler. Şapkalı, Küf, Maya ve Parazit mantarları olarak 4'e ayrılırlar.</p>
-                <p><strong>Bitkiler ve Hayvanlar:</strong> Bitkiler çiçekli ve çiçeksiz; hayvanlar ise omurgalı ve omurgasız olarak sınıflandırılır. Omurgalılar: Balıklar, Kurbağalar, Sürüngenler, Kuşlar ve Memelilerdir.</p>
+                <p><strong>Sınıflandırma:</strong> Canlıları mikroskobik canlılar, mantarlar, bitkiler ve hayvanlar olarak 4 gruba ayırıyoruz. Mantarlar bitki değildir, kendi besinlerini üretemezler.</p>
             </div>
         </div>
 
@@ -48,19 +53,21 @@
         <div class="panel">
             <img src="unite3.jpeg" alt="Kuvvet ve Sürtünme" class="unit-image">
             <div class="unit-text">
-                <p><strong>Kuvvetin Ölçülmesi:</strong> Dinamometre ile ölçülür. İçindeki yayın esnekliği ne kadar fazlaysa o kadar hassas ölçüm yapar.</p>
-                <p><strong>Sürtünme Kuvveti:</strong> İki yüzeyin temasıyla oluşur ve harekete zıt yönlüdür. Yüzey cinsine bağlıdır; camda az, halıda fazladır.</p>
-                <p><strong>Hava ve Su Direnci:</strong> Bu direnci azaltmak için uçakların burnu sivri, gemiler "V" şeklinde tasarlanır (aerodinamik).</p>
+                <p><strong>Dinamometre:</strong> Kuvveti ölçer. Sürtünme kuvveti ise hareketi zorlaştıran bir etkidir ve pürüzlü yüzeylerde daha fazladır.</p>
             </div>
+        </div>
+
+        <div style="background: #e1f5fe; padding: 20px; border-radius: 15px; margin-top: 30px; border-left: 5px solid #001f3f;">
+            <h2 style="color: #001f3f; margin-top: 0;">🌟 İlginç Fen Bilgileri</h2>
+            <p><strong>Güneş'in Devasalığı:</strong> Güneş'in içine yaklaşık 1 milyon 300 bin tane Dünya sığabilir!</p>
+            <p><strong>Uzayda Ses:</strong> Uzay boşluk olduğu için ses yayılmaz. Yani uzayda devasa patlamalar olsa bile hiçbir şey duyamayız.</p>
         </div>
 
         <button class="accordion">4. ÜNİTE: MADDE VE DEĞİŞİM</button>
         <div class="panel">
             <img src="unite4.jpeg" alt="Madde ve Değişim" class="unit-image">
             <div class="unit-text">
-                <p><strong>Hâl Değişimi:</strong> Erime, buharlaşma ve süblimleşme ısı alarak; yoğuşma, donma ve kırağılaşma ısı vererek gerçekleşir.</p>
-                <p><strong>Isı ve Sıcaklık:</strong> Isı bir enerji türüdür (kalorimetre kabı), sıcaklık bir göstergedir (termometre). Isı akışı sıcaktan soğuğa doğrudur.</p>
-                <p><strong>Genleşme ve Büzülme:</strong> Isı alan madde hacminin artmasına genleşme, ısı veren maddenin hacminin küçülmesine büzülme denir.</p>
+                <p><strong>Hâl Değişimi:</strong> Erime, donma, buharlaşma gibi olayları kapsar. Isı enerjidir, sıcaklık ise bu enerjinin bir ölçümüdür.</p>
             </div>
         </div>
 
@@ -68,8 +75,7 @@
         <div class="panel">
             <img src="unite5.jpeg" alt="Işığın Yayılması" class="unit-image">
             <div class="unit-text">
-                <p><strong>Işığın Yayılması:</strong> Işık her yöne ve doğrusal yolla yayılır. Işığı geçirme durumuna göre maddeler Saydam, Yarı Saydam ve Opak olarak ayrılır.</p>
-                <p><strong>Yansıma ve Gölge:</strong> Gelme açısı her zaman yansıma açısına eşittir. Işık opak bir maddeyle karşılaşınca arkasında karanlık bir alan (tam gölge) oluşturur.</p>
+                <p><strong>Işığın Yolu:</strong> Işık her yöne doğrusal yayılır. Opak maddeler ışığı geçirmez ve gölge oluşturur.</p>
             </div>
         </div>
 
@@ -77,8 +83,7 @@
         <div class="panel">
             <img src="unite6.jpeg" alt="İnsan ve Çevre" class="unit-image">
             <div class="unit-text">
-                <p><strong>Biyoçeşitlilik:</strong> Bir ekosistemdeki canlı zenginliğidir. Türkiye biyoçeşitlilik açısından çok zengindir (Van Kedisi, Ters Lale vb.).</p>
-                <p><strong>Çevre Sorunları:</strong> Orman yangınları, kirlilik ve bilinçsiz avlanma biyoçeşitliliği tehdit eder. Deprem, heyelan ve kasırga gibi doğal afetlere karşı önlemler hayati önem taşır.</p>
+                <p><strong>Biyoçeşitlilik:</strong> Ülkemizin zengin canlı türlerini korumalıyız. Çevre kirliliği biyoçeşitliliği tehdit eden en büyük sorundur.</p>
             </div>
         </div>
 
@@ -86,8 +91,7 @@
         <div class="panel">
             <img src="unite7.jpeg" alt="Elektrik Devresi" class="unit-image">
             <div class="unit-text">
-                <p><strong>Devre Elemanları:</strong> Pil, ampul, anahtar ve bağlantı kabloları sembollerle gösterilir (ortak bilim dili).</p>
-                <p><strong>Parlaklık Kontrolü:</strong> Pil sayısı artarsa parlaklık artar. Ampul sayısı artarsa parlaklık azalır. Burada değişkenleri (Bağımlı, Bağımsız, Kontrollü) doğru belirlemek çok önemlidir.</p>
+                <p><strong>Basit Devreler:</strong> Pil, ampul, kablo ve anahtarın sembollerle gösterimini öğreniyoruz. Pil sayısı artarsa ampul daha parlak yanar.</p>
             </div>
         </div>
 
@@ -106,6 +110,11 @@
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 } 
             });
+        }
+        
+        function toggleAnswer() {
+            var x = document.getElementById("answer");
+            x.style.display = (x.style.display === "none") ? "block" : "none";
         }
     </script>
 </body>
