@@ -32,17 +32,17 @@
         .btn-green { background-color: #43aa8b; } 
         .btn-blue { background-color: #4d908e; } 
         .btn-red { background-color: #d90429; } 
+        .btn-lgs { background-color: #003566; grid-column: span 2; } /* Yeni Eklenen LGS Bölümü */
         .btn-purple { background-color: #6a4c93; grid-column: span 2; }
 
         .panel { background-color: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; border-radius: 10px; border: 1px solid #eee; margin-top: 5px; }
         .panel-content { padding: 12px; font-size: 0.85rem; text-align: left; }
 
-        /* Motivasyon Sözleri Estetiği */
+        /* Estetik Düzenlemeler */
         .quote-container { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         .quote-text { font-style: italic; color: #444; display: block; margin-bottom: 4px; }
         .quote-author { display: block; text-align: right; font-weight: bold; font-size: 0.8rem; color: #0077b6; }
 
-        /* Günlük Görevler Tasarımı */
         .task-list { list-style: none; padding: 0; }
         .task-item { background: #f0faff; margin-bottom: 8px; padding: 10px; border-radius: 8px; border-left: 4px solid #0077b6; }
         .task-item b { color: #002855; }
@@ -54,7 +54,7 @@
 
     <section class="hero">
         <h1>DİJİTAL FEN AKADEMİSİ</h1>
-        <p>Geleceğin bilim insanları için naif bir dijital laboratuvar.</p>
+        <p>Fen Bilimlerini sadece öğrenmekle kalma, keşfet! Sınırları zorla, merak et ve başarmaya buradan başla! 🚀</p>
     </section>
 
     <div class="search-container">
@@ -82,8 +82,7 @@
                 <button class="accordion-btn btn-orange">📅 Günlük Görevler</button>
                 <div class="panel">
                     <div class="panel-content">
-                        <ul class="task-list" id="dailyTasks">
-                            </ul>
+                        <ul class="task-list" id="dailyTasks"></ul>
                     </div>
                 </div>
             </div>
@@ -101,6 +100,15 @@
             <div class="grid-item">
                 <button class="accordion-btn btn-red">❌ Hata Köşesi</button>
                 <div class="panel"><div class="panel-content">En sık yapılan hatalar...</div></div>
+            </div>
+
+            <div class="grid-item" style="grid-column: span 2;">
+                <button class="accordion-btn btn-lgs">🎯 LGS Radar: Sınav Tadında Sorular</button>
+                <div class="panel">
+                    <div class="panel-content" style="color: #003566; font-style: italic;">
+                        LGS'de karşına çıkabilecek, mantık ve muhakeme odaklı yeni nesil soru tarzları çok yakında burada olacak...
+                    </div>
+                </div>
             </div>
 
             <div class="grid-item" style="grid-column: span 2;">
@@ -139,11 +147,11 @@
 
     <footer>
         <p>Bu portal, Fen Bilimleri Öğretmeni <b>Büşra ARABA</b> tarafından tasarlanmıştır.</p>
+        <p style="font-size: 0.9rem; color: #555;">Sorularınız veya önerileriniz için bana ulaşabilirsiniz:</p>
         📧 <a href="mailto:busraaraba@gmail.com" style="color: #0096c7; text-decoration: none; font-weight: bold;">busraaraba@gmail.com</a>
     </footer>
 
     <script>
-        // Akordiyon
         var acc = document.getElementsByClassName("accordion-btn");
         for (var i = 0; i < acc.length; i++) {
             acc[i].addEventListener("click", function() {
@@ -152,7 +160,6 @@
             });
         }
 
-        // AKILLI ARAMA: Ünite ismine göre sınıf butonunu bulur
         function smartSearch() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let classes = document.getElementsByClassName('class-item');
@@ -167,12 +174,11 @@
             }
         }
 
-        // SINIFLARA ÖZEL GÜNLÜK GÖREVLER
         const dailyTasks = {
-            5: ["Ay'ın evrelerini çiz!", "Canlılar dünyası testi çöz."],
-            6: ["Güneş tutulması şeması yap.", "Dolaşım sistemi sorularına bak."],
-            7: ["Hücre ve organelleri tekrar et.", "Kuvvet-İş problemlerini çöz."],
-            8: ["Mevsimlerin oluşumu 10 soru çöz.", "DNA eşlenmesi videosu izle."]
+            5: ["Ay'ın evrelerini çiz!", "Güneş ve Dünya'nın büyüklüklerini kıyasla."],
+            6: ["Sindirim sistemi organlarını say.", "Dengelenmiş kuvvetlere 3 örnek ver."],
+            7: ["Hücre organellerinin görevlerini tekrar et.", "Karışımları ayırma yöntemlerine bak."],
+            8: ["Mevsimler ve İklim'den 10 soru çöz.", "DNA eşlenmesi aşamalarını hatırla."]
         };
         let taskHTML = "";
         for (let grade in dailyTasks) {
@@ -180,7 +186,6 @@
         }
         document.getElementById("dailyTasks").innerHTML = taskHTML;
 
-        // Sayaç
         function updateCountdown() {
             const lgsDate = new Date("June 7, 2026 09:30:00").getTime();
             const now = new Date().getTime();
